@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página con integración continua</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0f1419;
+      --card: #1a2332;
+      --text: #e7ecf3;
+      --muted: #9aa8bc;
+      --accent: #3dd6c6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1c3148, var(--bg) 55%);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+    main {
+      width: min(40rem, 100%);
+      background: var(--card);
+      border: 1px solid #2a3a50;
+      border-radius: 1rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+    p { color: var(--muted); line-height: 1.6; }
+    h1 { margin: 0 0 0.5rem; font-size: 2rem; }
+    .tag {
+      display: inline-block;
+      margin: 0 0.4rem 0.4rem 0;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: #12352f;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+    ol { color: var(--muted); line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Hola desde surge.sh</h1>
+    <p>Esta página estática se publica sola cada vez que hay un push a la rama <strong>main</strong>.</p>
+    <p>
+      <span class="tag">HTML</span>
+      <span class="tag">GitHub Actions</span>
+      <span class="tag">surge.sh</span>
+    </p>
+    <ol>
+      <li>El repositorio guarda este <code>index.html</code>.</li>
+      <li>GitHub Actions instala surge y despliega el sitio.</li>
+      <li>El token vive en el secret <code>SURGE_TOKEN</code>, no en el código.</li>
+    </ol>
+  </main>
+</body>
+</html>
